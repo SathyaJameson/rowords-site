@@ -198,9 +198,10 @@
     .page-header p {
       font-size: 1.05rem;
       color: var(--blue-soft);
-      max-width: 520px;
+      max-width: 600px;
       margin: 0 auto;
       line-height: 1.85;
+      white-space: nowrap;
     }
 
     /* ── PORTFOLIO GRID ── */
@@ -333,6 +334,7 @@
         border-top: 1px solid var(--rule-dark);
         padding: 2rem 5vw;
         gap: 1.5rem;
+        z-index: 99;
       }
       .hamburger { display: flex; }
       .dropdown-menu {
@@ -347,6 +349,11 @@
         min-width: auto;
       }
       .dropdown-menu a { padding: 0.4rem 0; border: none; }
+      .page-header { padding: 6rem 5vw 3rem; }
+      .page-header p { white-space: normal; }
+      .portfolio-section { padding: 3rem 5vw; }
+      .portfolio-card-body { padding: 1.25rem 1.25rem 1.5rem; }
+      footer { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
     }
   </style>
 </head>
@@ -470,11 +477,24 @@
     const dropdown = document.querySelector('.nav-dropdown');
     if (dropdown) {
       dropdown.querySelector('span').addEventListener('click', (e) => {
-        dropdown.classList.toggle('open');
-        e.stopPropagation();
+        if (window.innerWidth <= 768) {
+          dropdown.classList.toggle('open');
+          e.stopPropagation();
+        }
       });
-      document.addEventListener('click', () => dropdown.classList.remove('open'));
+      document.addEventListener('click', (e) => {
+        if (!dropdown.contains(e.target)) dropdown.classList.remove('open');
+      });
     }
+
+    // Close mobile menu when tapping outside
+    document.addEventListener('click', (e) => {
+      const nav = document.getElementById('nav-links');
+      const hamburger = document.getElementById('hamburger');
+      if (nav.classList.contains('open') && !nav.contains(e.target) && !hamburger.contains(e.target)) {
+        nav.classList.remove('open');
+      }
+    });
 
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
