@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rowords | Content Writing & Editing</title>
+  <meta name="description" content="Freelance content writer and editor in Bengaluru. SEO blog writing, AI content editing, and proofreading for businesses and agencies." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fahkwang:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Source+Serif+4:ital,wght@0,400;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230D1B2A'/%3E%3Ctext x='50%25' y='52%25' dominant-baseline='central' text-anchor='middle' font-family='Fahkwang%2C serif' font-size='20' fill='%2390B4D4'%3ER%3C/text%3E%3C/svg%3E" />
+
+  <style>
+    :root {
+      /* Blues */
+      --blue-pale:    #EEF4FA;
+      --blue-soft:    #D6E8F5;
+      --blue-light:   #A8CDE8;
+      --blue-mid:     #6A9FC0;
+      --blue-rich:    #3A7CA5;
+      --blue-deep:    #1E5276;
+      --blue-navy:    #0D2A40;
+      --blue-ink:     #071828;
+
+      /* Neutrals */
+      --white:        #FFFFFF;
+      --off-white:    #F7FAFD;
+      --ink:          #0D1E2E;
+      --ink-mid:      #1E3448;
+      --ink-soft:     #3A5570;
+      --rule-light:   #C8DCF0;
+      --rule-dark:    #1A3A58;
+
+      /* Title colours */
+      --title-hero:   #FFFFFF;
+      --title-light:  #1E3448;
+      --title-accent: #3A7CA5;
+      --title-dark:   #D6E8F5;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--off-white);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: var(--blue-ink);
+      border-bottom: 1px solid var(--rule-dark);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5vw;
+      height: 70px;
+      transition: box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: 0 4px 28px rgba(0,0,0,0.45); }
+
+    .nav-logo {
+      font-family: 'Fahkwang', sans-serif;
+      font-weight: 400;
+      font-size: 1.55rem;
+      letter-spacing: 0.05em;
+      color: var(--blue-light);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.76rem;
+      font-weight: 500;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--blue-soft);
+      text-decoration: none;
+      transition: color 0.2s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 0;
+      width: 0; height: 1px;
+      background: var(--blue-light);
+      transition: width 0.25s;
+    }
+    .nav-links a:hover { color: var(--blue-light); }
+    .nav-links a:hover::after { width: 100%; }
+
+    /* dropdown */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > span {
+      font-size: 0.76rem;
+      font-weight: 500;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--blue-soft);
+      cursor: pointer;
+      transition: color 0.2s;
+      user-select: none;
+    }
+    .nav-dropdown:hover > span,
+    .nav-dropdown.open > span { color: var(--blue-light); }
+
+    .dropdown-menu {
+      position: absolute;
+      top: calc(100% + 14px);
+      left: 50%;
+      transform: translateX(-50%) translateY(-6px);
+      background: var(--blue-navy);
+      border: 1px solid var(--rule-dark);
+      min-width: 200px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s, transform 0.2s;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+      z-index: 200;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown.open .dropdown-menu {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateX(-50%) translateY(0);
+    }
+    .dropdown-menu a {
+      display: block;
+      padding: 0.9rem 1.4rem;
+      font-size: 0.74rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue-soft);
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule-dark);
+      transition: background 0.15s, color 0.15s;
+    }
+    .dropdown-menu a:last-child { border-bottom: none; }
+    .dropdown-menu a:hover { background: rgba(106,159,192,0.12); color: var(--blue-light); }
+    .dropdown-menu a::after { display: none; }
+
+    /* hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px; height: 1.5px;
+      background: var(--blue-soft);
+    }
+
+    /* ── HERO — single solid colour ── */
+    #home {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 70px 5vw 0;
+      background: var(--blue-deep);
+    }
+
+    .hero-inner { max-width: 680px; }
+
+    .hero-eyebrow {
+      font-size: 0.73rem;
+      font-weight: 600;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--blue-light);
+      margin-bottom: 1.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 38px; height: 1.5px;
+      background: var(--blue-light);
+    }
+
+    .hero-headline {
+      font-family: 'Playfair Display', serif;
+      font-weight: 800;
+      font-size: clamp(2.8rem, 6vw, 4.6rem);
+      line-height: 1.08;
+      color: var(--title-hero);
+      margin-bottom: 1.75rem;
+      letter-spacing: -0.02em;
+    }
+    .hero-headline em {
+      font-style: italic;
+      color: var(--blue-light);
+    }
+
+    .hero-sub {
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--blue-soft);
+      max-width: 540px;
+      margin-bottom: 3rem;
+      line-height: 1.85;
+    }
+
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--blue-light);
+      color: var(--blue-ink);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1.05rem 2.1rem;
+      transition: background 0.25s, gap 0.25s;
+    }
+    .btn-primary:hover { background: var(--blue-mid); color: #fff; gap: 1rem; }
+    .btn-primary svg { transition: transform 0.25s; }
+    .btn-primary:hover svg { transform: translateX(4px); }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      border: 1.5px solid rgba(168,205,232,0.45);
+      color: var(--blue-light);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1.05rem 2.1rem;
+      transition: border-color 0.25s, background 0.25s;
+    }
+    .btn-ghost:hover { border-color: var(--blue-light); background: rgba(168,205,232,0.1); }
+
+    /* ── SECTIONS ── */
+    section { padding: 7rem 5vw; }
+
+    /* label */
+    .lbl {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1rem;
+    }
+    .lbl::before {
+      content: '';
+      display: block;
+      width: 28px; height: 2px;
+    }
+    .lbl-blue { color: var(--blue-rich); }
+    .lbl-blue::before { background: var(--blue-rich); }
+    .lbl-soft { color: var(--blue-light); }
+    .lbl-soft::before { background: var(--blue-light); }
+
+    /* titles */
+    .ttl {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: clamp(2rem, 3.8vw, 3.1rem);
+      line-height: 1.12;
+      margin-bottom: 1.1rem;
+      letter-spacing: -0.01em;
+    }
+    .ttl-accent { color: var(--title-accent); }
+    .ttl-navy   { color: var(--blue-navy); }
+    .ttl-light  { color: var(--title-dark); }
+    .ttl-white  { color: #ffffff; }
+
+    /* intro */
+    .intro {
+      font-size: 1.05rem;
+      max-width: 560px;
+      margin-bottom: 3.5rem;
+      line-height: 1.85;
+      font-weight: 400;
+    }
+    .intro-dark  { color: var(--ink-soft); }
+    .intro-light { color: var(--blue-soft); }
+
+    /* ── SERVICES — pale blue bg ── */
+    #services { background: var(--blue-pale); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      padding: 2.6rem;
+      border-top: 4px solid var(--blue-light);
+      box-shadow: 0 2px 16px rgba(58,124,165,0.07);
+      transition: border-top-color 0.25s, transform 0.25s, box-shadow 0.25s;
+    }
+    .service-card:hover {
+      border-top-color: var(--blue-rich);
+      transform: translateY(-5px);
+      box-shadow: 0 16px 48px rgba(58,124,165,0.14);
+    }
+
+    .service-num {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--blue-mid);
+      margin-bottom: 1rem;
+    }
+
+    .service-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--blue-navy);
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    .service-body {
+      font-size: 0.97rem;
+      color: var(--ink-soft);
+      line-height: 1.9;
+      margin-bottom: 1.6rem;
+    }
+
+    .service-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+
+    .service-tag {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--blue-navy);
+      color: var(--blue-soft);
+      padding: 0.32rem 0.8rem;
+    }
+
+    /* ── WRITING WORK — rich blue bg ── */
+    #writing-work { background: var(--blue-rich); }
+
+    .work-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .work-link-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-top: 3px solid var(--blue-light);
+      padding: 2.2rem 2rem 2.8rem;
+      text-decoration: none;
+      display: block;
+      position: relative;
+      transition: background 0.25s, transform 0.25s;
+    }
+    .work-link-card:hover {
+      background: rgba(255,255,255,0.14);
+      transform: translateY(-4px);
+    }
+
+    .work-link-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: #ffffff;
+      margin-bottom: 0.6rem;
+    }
+
+    .work-link-desc {
+      font-size: 0.92rem;
+      color: var(--blue-soft);
+      line-height: 1.75;
+    }
+
+    .work-link-arrow {
+      position: absolute;
+      bottom: 1.75rem; right: 2rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--blue-light);
+      transition: transform 0.25s;
+    }
+    .work-link-card:hover .work-link-arrow { transform: translateX(5px); }
+
+    /* ── ABOUT — white bg ── */
+    #about { background: var(--white); padding: 5.5rem 5vw; }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.75fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .about-left { position: sticky; top: 90px; }
+
+    .about-name {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 2rem;
+      color: var(--blue-navy);
+      margin-bottom: 0.3rem;
+    }
+
+    .about-role {
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+      color: var(--blue-rich);
+      margin-bottom: 1.5rem;
+    }
+
+    .about-divider {
+      width: 48px; height: 2px;
+      background: var(--blue-light);
+    }
+
+    .about-body p {
+      font-size: 1rem;
+      color: var(--ink-soft);
+      line-height: 1.9;
+      margin-bottom: 1.1rem;
+    }
+
+    .about-pull {
+      font-family: 'Source Serif 4', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--blue-navy);
+      border-left: 3px solid var(--blue-light);
+      padding-left: 1.3rem;
+      margin: 1.6rem 0;
+      line-height: 1.65;
+    }
+
+    .experience-list { margin-top: 1.75rem; }
+
+    .experience-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1rem;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid var(--rule-light);
+    }
+    .experience-item:first-child { border-top: 1px solid var(--rule-light); }
+
+    .exp-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--blue-mid);
+      margin-top: 0.48rem;
+      flex-shrink: 0;
+    }
+
+    .exp-company {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.1rem;
+    }
+
+    .exp-role {
+      font-size: 0.83rem;
+      color: var(--ink-soft);
+    }
+
+    /* ── CONTACT — navy bg ── */
+    #contact { background: var(--blue-navy); }
+
+    .contact-inner { max-width: 640px; }
+
+    .contact-email-block {
+      margin-top: 2rem;
+      padding: 2.6rem;
+      background: rgba(0,0,0,0.15);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-top: 3px solid var(--blue-light);
+    }
+
+    .contact-prompt {
+      font-size: 0.71rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--blue-light);
+      margin-bottom: 0.8rem;
+    }
+
+    .contact-email-link {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--white);
+      text-decoration: none;
+      display: inline-block;
+      border-bottom: 1px solid var(--rule-dark);
+      padding-bottom: 3px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .contact-email-link:hover { color: var(--blue-light); border-color: var(--blue-light); }
+
+    .contact-social {
+      margin-top: 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+    }
+
+    .social-link {
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue-soft);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.2s;
+    }
+    .social-link:hover { color: var(--blue-light); }
+
+    /* ── TESTIMONIALS — pale blue bg ── */
+    #testimonials { background: var(--blue-pale); }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-top: 0.5rem;
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      border-top: 4px solid var(--blue-rich);
+      padding: 2.5rem;
+      box-shadow: 0 2px 20px rgba(58,124,165,0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(58,124,165,0.13);
+    }
+
+    .testimonial-quote {
+      font-family: 'Source Serif 4', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--ink-soft);
+      line-height: 1.85;
+      position: relative;
+      padding-top: 1.5rem;
+    }
+    .testimonial-quote::before {
+      content: '\201C';
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      color: var(--blue-light);
+      line-height: 0;
+      position: absolute;
+      top: 1.2rem;
+      left: 0;
+    }
+
+    .testimonial-attribution {
+      border-top: 1px solid var(--rule-light);
+      padding-top: 1.25rem;
+    }
+
+    .testimonial-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.15rem;
+    }
+
+    .testimonial-role {
+      font-size: 0.82rem;
+      color: var(--ink-soft);
+      margin-bottom: 0.3rem;
+    }
+
+    .testimonial-company-link {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--blue-rich);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+    .testimonial-company-link:hover { color: var(--blue-deep); }
+
+    /* ── CONTACT — lighter blue ── */
+    #contact { background: var(--blue-deep); }
+    footer {
+      background: var(--blue-ink);
+      padding: 2.5rem 5vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      border-top: 1px solid var(--rule-dark);
+    }
+
+    .footer-logo {
+      font-family: 'Fahkwang', sans-serif;
+      font-weight: 400;
+      font-size: 1.15rem;
+      letter-spacing: 0.05em;
+      color: var(--blue-light);
+    }
+
+    .footer-copy {
+      font-size: 0.74rem;
+      color: var(--ink-soft);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .about-left { position: static; }
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 70px; left: 0; right: 0;
+        background: var(--blue-ink);
+        border-top: 1px solid var(--rule-dark);
+        padding: 2rem 5vw;
+        gap: 1.5rem;
+      }
+      .hamburger { display: flex; }
+      .dropdown-menu {
+        position: static;
+        opacity: 1;
+        pointer-events: all;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        background: transparent;
+        padding-left: 1rem;
+        min-width: auto;
+      }
+      .dropdown-menu a { padding: 0.4rem 0; border: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="#home" class="nav-logo">Rowords</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li class="nav-dropdown">
+        <span>Writing Work ▾</span>
+        <div class="dropdown-menu">
+          <a href="https://www.rowords.com/s-projects-side-by-side" target="_blank" rel="noopener">Portfolio</a>
+          <a href="https://www.rowords.com/blog" target="_blank" rel="noopener">Sample Articles</a>
+        </div>
+      </li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- HERO — single solid blue -->
+  <section id="home">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Content Writing & Editing</p>
+      <h1 class="hero-headline">
+        Human&#8209;quality content<br>
+        for businesses that know<br>
+        <em>AI isn't enough.</em>
+      </h1>
+      <p class="hero-sub">
+        Writing, editing, and AI content refinement — delivered with clarity, reliability, and a human voice.
+      </p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">
+          Get in touch
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#services" class="btn-ghost">View services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <p class="lbl lbl-blue reveal">What I offer</p>
+    <h2 class="ttl ttl-accent reveal">Tailored content writing and editing<br>for businesses that value quality.</h2>
+    <p class="intro intro-dark reveal">Each service is built around one goal — content that works for your audience, your brand, and your bottom line.</p>
+
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <p class="service-num">01</p>
+        <h3 class="service-title">AI Content Editing & Humanization</h3>
+        <p class="service-body">AI tools generate drafts fast — but raw AI content often sounds flat, repetitive, and unconvincing to real readers. I transform AI-generated text into polished content that sounds natural, credible, and on-brand.<br><br>I remove AI "tells," fix awkward phrasing, verify facts, sharpen tone, and ensure your content meets editorial standards. This is a full editorial pass for clarity and credibility — not light proofreading. Ideal for marketing teams, startups, and agencies that need a human editor to make AI output actually work.</p>
+        <div class="service-tags">
+          <span class="service-tag">AI editing</span>
+          <span class="service-tag">Humanization</span>
+          <span class="service-tag">Fact-checking</span>
+          <span class="service-tag">Tone refinement</span>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <p class="service-num">02</p>
+        <h3 class="service-title">SEO Blog Writing & Long-form Articles</h3>
+        <p class="service-body">Ranking on Google requires more than keyword stuffing — it demands well-researched, authoritatively written content that answers real questions and earns trust. I write SEO-optimized blog posts and long-form articles structured for both search engines and human readers.<br><br>Every piece includes keyword integration, internal linking guidance, meta descriptions, and readability optimization. Whether you need a one-off article or a consistent monthly content calendar, I deliver content that builds organic traffic over time.</p>
+        <div class="service-tags">
+          <span class="service-tag">SEO writing</span>
+          <span class="service-tag">Long-form</span>
+          <span class="service-tag">B2B articles</span>
+          <span class="service-tag">Content calendar</span>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <p class="service-num">03</p>
+        <h3 class="service-title">Proofreading & Copy Editing</h3>
+        <p class="service-body">A single error or inconsistent tone can quietly undermine your brand's credibility. I review your content for grammar, clarity, sentence structure, tone consistency, factual accuracy, and style guide adherence — making certain it is clean, precise, and ready to publish.<br><br>Whether it's web copy, articles, or marketing materials, I refine flow and readability so your content lands as smooth, consistent, and professional.</p>
+        <div class="service-tags">
+          <span class="service-tag">Proofreading</span>
+          <span class="service-tag">Copy editing</span>
+          <span class="service-tag">Style guide</span>
+          <span class="service-tag">Grammar</span>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <p class="service-num">04</p>
+        <h3 class="service-title">Content for Agencies</h3>
+        <p class="service-body">Reliable freelance writing and editing support for content, media, and branding agencies. I handle article creation, editing overflow, and white-labeled writing that is SEO-optimized, delivered on time, and tailored to meet your brand guidelines.<br><br>If your team is at capacity and you need a dependable extra pair of hands that understands editorial standards — this is built for you.</p>
+        <div class="service-tags">
+          <span class="service-tag">White-label</span>
+          <span class="service-tag">Agency support</span>
+          <span class="service-tag">Overflow editing</span>
+          <span class="service-tag">On-time delivery</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WRITING WORK -->
+  <section id="writing-work">
+    <p class="lbl lbl-soft reveal">Writing Work</p>
+    <h2 class="ttl ttl-white reveal">Writing that speaks for itself.</h2>
+    <p class="intro intro-light reveal">A selection of published articles, portfolio pieces, and what clients have said.</p>
+
+    <div class="work-links">
+      <a href="https://www.rowords.com/s-projects-side-by-side" target="_blank" rel="noopener" class="work-link-card reveal">
+        <h3 class="work-link-title">Portfolio</h3>
+        <p class="work-link-desc">Published articles and writing projects across industries and formats.</p>
+        <span class="work-link-arrow">→</span>
+      </a>
+      <a href="https://www.rowords.com/blog" target="_blank" rel="noopener" class="work-link-card reveal">
+        <h3 class="work-link-title">Sample Articles</h3>
+        <p class="work-link-desc">Original pieces written to demonstrate range, voice, and editorial depth.</p>
+        <span class="work-link-arrow">→</span>
+      </a>
+      <a href="https://www.rowords.com/testimonials" target="_blank" rel="noopener" class="work-link-card reveal">
+        <h3 class="work-link-title">Testimonials</h3>
+        <p class="work-link-desc">What clients and collaborators have said about working with Sathya.</p>
+        <span class="work-link-arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-grid">
+      <div class="about-left reveal">
+        <p class="lbl lbl-blue">About</p>
+        <h2 class="about-name">Sathya Jameson</h2>
+        <p class="about-role">Principal Content Writer</p>
+        <div class="about-divider"></div>
+      </div>
+      <div class="about-body reveal">
+        <p>When content is unclear, generic, or sounds like it came from a chatbot, your audience notices. That's where I come in.</p>
+        <div class="about-pull">"You get a writer who delivers work on time and actually sounds like your brand."</div>
+        <p>A content writer and editor with over a decade of experience, I help businesses communicate with clarity and credibility. I've written and edited content for UK and US-based companies across multiple industries.</p>
+        <p>My background spans original content writing, editorial management, B2B research content, and AI content refinement. I understand both the craft of writing and the operational realities of content teams — having engaged in content strategy and processes from the inside.</p>
+
+        <div class="experience-list">
+          <div class="experience-item">
+            <div class="exp-dot"></div>
+            <div>
+              <p class="exp-company">HeartIntel Learning Solutions</p>
+              <p class="exp-role">Content Manager · 2025 — LinkedIn content, newsletters, training program writing</p>
+            </div>
+          </div>
+          <div class="experience-item">
+            <div class="exp-dot"></div>
+            <div>
+              <p class="exp-company">GD Research Center (GlobalData)</p>
+              <p class="exp-role">Editor, Media & Automated Sales · 2022–2025 — Market research, editorial content, AI review, SOP development</p>
+            </div>
+          </div>
+          <div class="experience-item">
+            <div class="exp-dot"></div>
+            <div>
+              <p class="exp-company">Freelance</p>
+              <p class="exp-role">Content Writer for US Clients · 2019–2022 — Food & nutrition, AI, and business topics</p>
+            </div>
+          </div>
+          <div class="experience-item">
+            <div class="exp-dot"></div>
+            <div>
+              <p class="exp-company">HummingMinds</p>
+              <p class="exp-role">Operations Manager, L&D Startup · 2016–2019 — Training content and client coordination</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <p class="lbl lbl-blue reveal">Testimonials</p>
+    <h2 class="ttl ttl-accent reveal">What clients say.</h2>
+    <p class="intro intro-dark reveal">Words from the people who've worked with Sathya directly.</p>
+
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card reveal">
+        <div class="testimonial-quote">
+          Sathya has a way with words that first surprise you and then capture your interest.
+          She has authored articles and blogs for HeartIntel, and has created training content for behavioural and communication programs.<br><br>
+          After uncovering the need and the specific objective of each assignment, she creates an initial draft to check alignment, then meticulously puts together every aspect of the content. Sathya takes full accountability and delivers great content on time.
+          She is forthright and keeps us in the loop as she progresses on the deliverables.<br><br>
+          Once you have a working rhythm going with Sathya, the magic happens!
+        </div>
+        <div class="testimonial-attribution">
+          <p class="testimonial-name">Leena Xavier</p>
+          <p class="testimonial-role">Founder & Leadership Coach</p>
+          <a href="https://www.heartintel.co.in" target="_blank" rel="noopener" class="testimonial-company-link">HeartIntel Learning Solutions</a>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal">
+        <div class="testimonial-quote">
+          I've collaborated with Sathya on food and nutrition and other articles written for a US audience, and I can say with confidence that she's one of the most dependable content writers I've worked with.<br><br>
+          What impressed me most was her ability to research complex nutrition topics, including health benefits and scientific studies, and translate them into articles that are both accurate and genuinely enjoyable to read. She has a natural feel for what a reader expects, delivering a clear structure, credible sourcing, and a warm, approachable tone that doesn't oversimplify the subject.<br><br>
+          Beyond the quality of the writing itself, Sathya is professional, communicative, and easy to work with. She meets deadlines, incorporates feedback gracefully, and consistently delivers polished content on time.
+        </div>
+        <div class="testimonial-attribution">
+          <p class="testimonial-name">Anju Mobin</p>
+          <p class="testimonial-role">Managing Editor</p>
+          <a href="https://www.bestfornutrition.com" target="_blank" rel="noopener" class="testimonial-company-link">BestForNutrition.com</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-inner">
+      <p class="lbl lbl-soft reveal">Contact</p>
+      <h2 class="ttl ttl-light reveal">Let's talk about your content.</h2>
+      <p class="intro intro-light reveal">Whether you have a brief, a project, or just a question — send an email and I'll get back to you promptly.</p>
+
+      <div class="contact-email-block reveal">
+        <p class="contact-prompt">Reach me directly</p>
+        <a href="mailto:sathya.jameson@rowords.com" class="contact-email-link">
+          sathya.jameson@rowords.com
+        </a>
+      </div>
+
+      <div class="contact-social reveal">
+        <a href="https://www.linkedin.com/in/sathyajameson/" target="_blank" rel="noopener" class="social-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://x.com/rowords_cs" target="_blank" rel="noopener" class="social-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          X / Twitter
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-logo">Rowords</span>
+    <span class="footer-copy">© 2026 Rowords. All rights reserved. · Bengaluru, India</span>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    function toggleMenu() {
+      document.getElementById('nav-links').classList.toggle('open');
+    }
+
+    const dropdown = document.querySelector('.nav-dropdown');
+    if (dropdown) {
+      dropdown.querySelector('span').addEventListener('click', (e) => {
+        dropdown.classList.toggle('open');
+        e.stopPropagation();
+      });
+      document.addEventListener('click', () => dropdown.classList.remove('open'));
+    }
+
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    document.querySelectorAll('#nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('nav-links').classList.remove('open');
+      });
+    });
+  </script>
+</body>
+</html>
