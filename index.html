@@ -674,6 +674,7 @@
         border-top: 1px solid var(--rule-dark);
         padding: 2rem 5vw;
         gap: 1.5rem;
+        z-index: 99;
       }
       .hamburger { display: flex; }
       .dropdown-menu {
@@ -688,6 +689,14 @@
         min-width: auto;
       }
       .dropdown-menu a { padding: 0.4rem 0; border: none; }
+      section { padding: 4rem 5vw; }
+      #home { min-height: 90vh; }
+      .hero-headline { font-size: clamp(2rem, 8vw, 3rem); }
+      .hero-sub { font-size: 0.95rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .work-links { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
     }
   </style>
 </head>
@@ -959,8 +968,19 @@
           e.stopPropagation();
         }
       });
-      document.addEventListener('click', () => dropdown.classList.remove('open'));
+      document.addEventListener('click', (e) => {
+        if (!dropdown.contains(e.target)) dropdown.classList.remove('open');
+      });
     }
+
+    // Close mobile menu when tapping outside
+    document.addEventListener('click', (e) => {
+      const nav = document.getElementById('nav-links');
+      const hamburger = document.getElementById('hamburger');
+      if (nav && nav.classList.contains('open') && !nav.contains(e.target) && !hamburger.contains(e.target)) {
+        nav.classList.remove('open');
+      }
+    });
 
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
