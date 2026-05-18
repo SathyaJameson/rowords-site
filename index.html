@@ -116,23 +116,37 @@
       cursor: pointer;
       transition: color 0.2s;
       user-select: none;
+      padding-bottom: 8px;
     }
     .nav-dropdown:hover > span,
     .nav-dropdown.open > span { color: var(--blue-light); }
 
     .dropdown-menu {
       position: absolute;
-      top: calc(100% + 2px);
+      top: calc(100% - 4px);
       left: 50%;
-      transform: translateX(-50%) translateY(-6px);
+      transform: translateX(-50%) translateY(-4px);
       background: var(--blue-navy);
       border: 1px solid var(--rule-dark);
       min-width: 200px;
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.18s, transform 0.18s;
+      transition: opacity 0.15s ease, transform 0.15s ease;
       box-shadow: 0 12px 40px rgba(0,0,0,0.4);
       z-index: 200;
+      /* Invisible top padding acts as a hover bridge */
+      padding-top: 8px;
+      margin-top: 0;
+    }
+    /* Invisible bridge so mouse can travel from span to menu without gap */
+    .nav-dropdown::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      height: 12px;
+      background: transparent;
     }
     .nav-dropdown:hover .dropdown-menu,
     .nav-dropdown.open .dropdown-menu {
