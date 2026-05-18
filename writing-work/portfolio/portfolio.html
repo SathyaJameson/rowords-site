@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Rowords</title>
+  <meta name="description" content="Portfolio of published articles and writing projects by Sathya Jameson — Rowords." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fahkwang:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230D1B2A'/%3E%3Ctext x='50%25' y='52%25' dominant-baseline='central' text-anchor='middle' font-family='Fahkwang%2C serif' font-size='20' fill='%2390B4D4'%3ER%3C/text%3E%3C/svg%3E" />
+
+  <style>
+    :root {
+      --blue-pale:    #EEF4FA;
+      --blue-soft:    #D6E8F5;
+      --blue-light:   #A8CDE8;
+      --blue-mid:     #6A9FC0;
+      --blue-rich:    #3A7CA5;
+      --blue-deep:    #1E5276;
+      --blue-navy:    #0D2A40;
+      --blue-ink:     #071828;
+      --white:        #FFFFFF;
+      --off-white:    #F7FAFD;
+      --ink:          #0D1E2E;
+      --ink-mid:      #1E3448;
+      --ink-soft:     #3A5570;
+      --rule-light:   #C8DCF0;
+      --rule-dark:    #1A3A58;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--off-white);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: var(--blue-ink);
+      border-bottom: 1px solid var(--rule-dark);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5vw;
+      height: 70px;
+      box-shadow: 0 4px 28px rgba(0,0,0,0.45);
+    }
+
+    .nav-logo {
+      font-family: 'Fahkwang', sans-serif;
+      font-weight: 400;
+      font-size: 1.55rem;
+      letter-spacing: 0.05em;
+      color: var(--blue-light);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.76rem;
+      font-weight: 500;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--blue-soft);
+      text-decoration: none;
+      transition: color 0.2s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 0;
+      width: 0; height: 1px;
+      background: var(--blue-light);
+      transition: width 0.25s;
+    }
+    .nav-links a:hover { color: var(--blue-light); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-links a.active { color: var(--blue-light); }
+    .nav-links a.active::after { width: 100%; }
+
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > span {
+      font-size: 0.76rem;
+      font-weight: 500;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--blue-light);
+      cursor: pointer;
+      transition: color 0.2s;
+      user-select: none;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: calc(100% + 14px);
+      left: 50%;
+      transform: translateX(-50%) translateY(-6px);
+      background: var(--blue-navy);
+      border: 1px solid var(--rule-dark);
+      min-width: 200px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s, transform 0.2s;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+      z-index: 200;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown.open .dropdown-menu {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateX(-50%) translateY(0);
+    }
+    .dropdown-menu a {
+      display: block;
+      padding: 0.9rem 1.4rem;
+      font-size: 0.74rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue-soft);
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule-dark);
+      transition: background 0.15s, color 0.15s;
+    }
+    .dropdown-menu a:last-child { border-bottom: none; }
+    .dropdown-menu a:hover { background: rgba(106,159,192,0.12); color: var(--blue-light); }
+    .dropdown-menu a::after { display: none; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px; height: 1.5px;
+      background: var(--blue-soft);
+    }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      background: var(--blue-deep);
+      padding: 8rem 5vw 5rem;
+      text-align: center;
+    }
+
+    .page-header-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--blue-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      margin-bottom: 1rem;
+    }
+    .page-header-label::before,
+    .page-header-label::after {
+      content: '';
+      display: block;
+      width: 28px; height: 1.5px;
+      background: var(--blue-light);
+    }
+
+    .page-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 800;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      color: var(--white);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .page-header p {
+      font-size: 1.05rem;
+      color: var(--blue-soft);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.85;
+    }
+
+    /* ── PORTFOLIO GRID ── */
+    .portfolio-section {
+      padding: 6rem 5vw;
+      background: var(--off-white);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .portfolio-card {
+      background: var(--white);
+      border-top: 4px solid var(--blue-light);
+      box-shadow: 0 2px 16px rgba(58,124,165,0.07);
+      overflow: hidden;
+      transition: transform 0.25s, box-shadow 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+    .portfolio-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 48px rgba(58,124,165,0.14);
+    }
+
+    .portfolio-card-image {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      background: var(--blue-pale);
+    }
+
+    .portfolio-card-body {
+      padding: 1.75rem 2rem 2rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 0.75rem;
+    }
+
+    .portfolio-card-tag {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue-mid);
+    }
+
+    .portfolio-card-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--blue-navy);
+      line-height: 1.3;
+    }
+
+    .portfolio-card-desc {
+      font-size: 0.92rem;
+      color: var(--ink-soft);
+      line-height: 1.8;
+      flex: 1;
+    }
+
+    .portfolio-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue-rich);
+      text-decoration: none;
+      margin-top: 0.5rem;
+      transition: gap 0.2s, color 0.2s;
+    }
+    .portfolio-card-link:hover { gap: 0.8rem; color: var(--blue-deep); }
+    .portfolio-card-link svg { transition: transform 0.2s; }
+    .portfolio-card-link:hover svg { transform: translateX(3px); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--blue-ink);
+      padding: 2.5rem 5vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      border-top: 1px solid var(--rule-dark);
+    }
+
+    .footer-logo {
+      font-family: 'Fahkwang', sans-serif;
+      font-weight: 400;
+      font-size: 1.15rem;
+      letter-spacing: 0.05em;
+      color: var(--blue-light);
+    }
+
+    .footer-copy {
+      font-size: 0.74rem;
+      color: var(--ink-soft);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 70px; left: 0; right: 0;
+        background: var(--blue-ink);
+        border-top: 1px solid var(--rule-dark);
+        padding: 2rem 5vw;
+        gap: 1.5rem;
+      }
+      .hamburger { display: flex; }
+      .dropdown-menu {
+        position: static;
+        opacity: 1;
+        pointer-events: all;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        background: transparent;
+        padding-left: 1rem;
+        min-width: auto;
+      }
+      .dropdown-menu a { padding: 0.4rem 0; border: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="../../index.html" class="nav-logo">Rowords&#8482;</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../index.html#services">Services</a></li>
+      <li class="nav-dropdown">
+        <span class="active">Writing Work ▾</span>
+        <div class="dropdown-menu">
+          <a href="portfolio.html" class="active">Portfolio</a>
+          <a href="../samples/samples.html">Sample Articles</a>
+        </div>
+      </li>
+      <li><a href="../../index.html#testimonials">Testimonials</a></li>
+      <li><a href="../../index.html#about">About</a></li>
+      <li><a href="../../index.html#contact">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <p class="page-header-label">Writing Work</p>
+    <h1>Portfolio</h1>
+    <p>Published articles and writing projects across industries and formats.</p>
+  </div>
+
+  <!-- PORTFOLIO GRID -->
+  <div class="portfolio-section">
+    <div class="portfolio-grid">
+
+      <div class="portfolio-card reveal">
+        <img
+          src="../../images/portfolio/Purchase Order Approval.png"
+          alt="Purchase Order Approval Process"
+          class="portfolio-card-image"
+        />
+        <div class="portfolio-card-body">
+          <p class="portfolio-card-tag">Process & Automation · Nanonets</p>
+          <h2 class="portfolio-card-title">Purchase Order Approval Process: How to Create & Automate It</h2>
+          <p class="portfolio-card-desc">A comprehensive guide to understanding, designing, and automating purchase order approval workflows for businesses looking to streamline procurement.</p>
+          <a href="https://nanonets.com/blog/purchase-order-approval-process/" target="_blank" rel="noopener" class="portfolio-card-link">
+            Read article
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="portfolio-card reveal">
+        <img
+          src="../../images/portfolio/Finding Your Voice.png"
+          alt="Finding Your Voice at the Workplace"
+          class="portfolio-card-image"
+        />
+        <div class="portfolio-card-body">
+          <p class="portfolio-card-tag">Leadership & Communication · HeartIntel</p>
+          <h2 class="portfolio-card-title">Finding Your Voice at the Workplace</h2>
+          <p class="portfolio-card-desc">An article exploring how professionals can overcome communication anxiety and build the confidence to speak up and be heard in workplace settings.</p>
+          <a href="https://www.linkedin.com/pulse/finding-your-voice-workplace-overcoming-anxiety-speaking-jameson-dyhfc/?trackingId=oAg2Fdv00v0f6BsrQ4kB%2BA%3D%3D" target="_blank" rel="noopener" class="portfolio-card-link">
+            Read article
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="portfolio-card reveal">
+        <img
+          src="../../images/portfolio/Guide to E-Invoicing.png"
+          alt="An In-depth Guide to E-Invoicing Automation"
+          class="portfolio-card-image"
+        />
+        <div class="portfolio-card-body">
+          <p class="portfolio-card-tag">Finance & Automation · Nanonets</p>
+          <h2 class="portfolio-card-title">An In-depth Guide to E-Invoicing Automation</h2>
+          <p class="portfolio-card-desc">A detailed guide covering e-invoicing standards, automation workflows, compliance requirements, and how businesses can transition to fully digital invoicing.</p>
+          <a href="https://nanonets.com/blog/e-invoicing-automation/" target="_blank" rel="noopener" class="portfolio-card-link">
+            Read article
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="portfolio-card reveal">
+        <img
+          src="../../images/portfolio/Document Data Capture.png"
+          alt="Document Data Capture: A Complete Guide"
+          class="portfolio-card-image"
+        />
+        <div class="portfolio-card-body">
+          <p class="portfolio-card-tag">Document Processing · Nanonets</p>
+          <h2 class="portfolio-card-title">Document Data Capture: A Complete Guide</h2>
+          <p class="portfolio-card-desc">A complete guide to document data capture — covering OCR, intelligent automation, use cases across industries, and how to choose the right solution.</p>
+          <a href="https://nanonets.com/blog/document-data-capture/" target="_blank" rel="noopener" class="portfolio-card-link">
+            Read article
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-logo">Rowords&#8482;</span>
+    <span class="footer-copy">© 2026 Rowords&#8482;. All rights reserved. · Bengaluru, India</span>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-links').classList.toggle('open');
+    }
+
+    const dropdown = document.querySelector('.nav-dropdown');
+    if (dropdown) {
+      dropdown.querySelector('span').addEventListener('click', (e) => {
+        dropdown.classList.toggle('open');
+        e.stopPropagation();
+      });
+      document.addEventListener('click', () => dropdown.classList.remove('open'));
+    }
+
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    document.querySelectorAll('#nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('nav-links').classList.remove('open');
+      });
+    });
+  </script>
+</body>
+</html>
