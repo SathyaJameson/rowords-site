@@ -40,7 +40,10 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px; /* offset for fixed nav so sections don't hide under header */
+    }
 
     body {
       background: var(--off-white);
@@ -685,7 +688,8 @@
         position: fixed;
         top: 70px; right: 0;
         width: auto;
-        min-width: 200px;
+        min-width: 220px;
+        max-width: 80vw;
         background: var(--blue-ink);
         border: 1px solid var(--rule-dark);
         border-top: none;
@@ -694,7 +698,8 @@
         z-index: 99;
         box-shadow: -4px 4px 20px rgba(0,0,0,0.3);
       }
-      .hamburger { display: flex; }
+      /* Keep dropdown submenu inside the menu panel */
+      .nav-dropdown { width: 100%; }
       .dropdown-menu {
         position: static;
         opacity: 1;
@@ -703,12 +708,22 @@
         box-shadow: none;
         border: none;
         background: transparent;
-        padding-left: 1rem;
+        padding: 0.25rem 0 0 1rem;
         min-width: auto;
+        width: 100%;
       }
-      .dropdown-menu a { padding: 0.4rem 0; border: none; }
-      section { padding: 4rem 5vw; }
-      #home { min-height: 90vh; }
+      .dropdown-menu a {
+        padding: 0.4rem 0;
+        border: none;
+        width: 100%;
+        display: block;
+        white-space: nowrap;
+      }
+      .hamburger { display: flex; }
+      /* Match about section spacing for all sections on mobile */
+      section { padding: 5rem 5vw 4rem; }
+      #about { padding: 5rem 5vw 4rem; }
+      #home { min-height: 90vh; padding-top: 70px; }
       .hero-headline { font-size: clamp(2rem, 8vw, 3rem); }
       .hero-sub { font-size: 0.95rem; }
       .services-grid { grid-template-columns: 1fr; }
