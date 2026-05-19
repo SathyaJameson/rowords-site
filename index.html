@@ -42,7 +42,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 90px; /* offset for fixed nav so sections don't hide under header */
+      scroll-padding-top: 52px;
     }
 
     body {
@@ -699,25 +699,39 @@
         box-shadow: -4px 4px 20px rgba(0,0,0,0.3);
       }
       /* Keep dropdown submenu inside the menu panel */
-      .nav-dropdown { width: 100%; }
+      .nav-dropdown { width: 100%; position: static; }
+      .nav-dropdown::after { display: none; }
+      /* Hide dropdown by default on mobile, show only when mobile-open */
+      .nav-dropdown .dropdown-menu {
+        display: none !important;
+      }
+      .nav-dropdown.mobile-open .dropdown-menu {
+        display: block !important;
+      }
       .dropdown-menu {
-        position: static;
-        opacity: 1;
-        pointer-events: all;
-        transform: none;
-        box-shadow: none;
-        border: none;
-        background: transparent;
-        padding: 0.25rem 0 0 1rem;
-        min-width: auto;
-        width: 100%;
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        transform: none !important;
+        opacity: 1 !important;
+        pointer-events: all !important;
+        box-shadow: none !important;
+        border: none !important;
+        background: transparent !important;
+        padding: 0.25rem 0 0 1rem !important;
+        min-width: auto !important;
+        width: 100% !important;
+        margin: 0 !important;
       }
       .dropdown-menu a {
-        padding: 0.4rem 0;
-        border: none;
-        width: 100%;
-        display: block;
-        white-space: nowrap;
+        padding: 0.4rem 0 !important;
+        border: none !important;
+        width: 100% !important;
+        display: block !important;
+        white-space: nowrap !important;
+        color: var(--blue-soft) !important;
+        background: transparent !important;
       }
       .hamburger { display: flex; }
       /* Match about section spacing for all sections on mobile */
@@ -995,14 +1009,17 @@
     const dropdown = document.querySelector('.nav-dropdown');
     if (dropdown) {
       dropdown.querySelector('span').addEventListener('click', (e) => {
-        // Only toggle on click for mobile (when hamburger is visible)
         if (window.innerWidth <= 768) {
-          dropdown.classList.toggle('open');
+          // Use a separate mobile-open class to avoid conflicts with desktop hover
+          dropdown.classList.toggle('mobile-open');
           e.stopPropagation();
         }
       });
       document.addEventListener('click', (e) => {
-        if (!dropdown.contains(e.target)) dropdown.classList.remove('open');
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove('open');
+          dropdown.classList.remove('mobile-open');
+        }
       });
     }
 
