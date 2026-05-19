@@ -51,6 +51,16 @@
     .footer-logo{font-family:'Fahkwang',sans-serif;font-weight:400;font-size:1.15rem;letter-spacing:0.05em;color:var(--blue-light);}
     .footer-copy{font-size:0.74rem;color:var(--ink-soft);letter-spacing:0.05em;}
     @media(max-width:768px){.nav-links{display:none;}.nav-links.open{display:flex;flex-direction:column;position:fixed;top:70px;left:0;right:0;background:var(--blue-ink);border-top:1px solid var(--rule-dark);padding:2rem 5vw;gap:1.5rem;}.hamburger{display:flex;}.dropdown-menu{position:static;opacity:1;pointer-events:all;transform:none;box-shadow:none;border:none;background:transparent;padding-left:1rem;min-width:auto;}.dropdown-menu a{padding:0.4rem 0;border:none;}.article-hero{height:280px;}}
+
+    /* laptop specific — 13" to 15" screens */
+    @media (min-width: 769px) and (max-width: 1440px) {
+      .page-header h1 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); }
+      .page-header p { font-size: 0.95rem; }
+      .article-hero-text h1 { font-size: clamp(1.6rem, 3vw, 2.4rem); }
+      .article-body h2 { font-size: 1.3rem; }
+      .article-intro { font-size: 1.05rem; }
+      .article-body p, .article-body li { font-size: 0.95rem; }
+    }
   </style>
 </head>
 <body>
