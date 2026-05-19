@@ -376,6 +376,16 @@
       .portfolio-card-body { padding: 1.25rem 1.25rem 1.5rem; }
       footer { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
     }
+
+    /* laptop specific — 13" to 15" screens */
+    @media (min-width: 769px) and (max-width: 1440px) {
+      .page-header h1 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); }
+      .page-header p { font-size: 0.95rem; }
+      .article-hero-text h1 { font-size: clamp(1.6rem, 3vw, 2.4rem); }
+      .article-body h2 { font-size: 1.3rem; }
+      .article-intro { font-size: 1.05rem; }
+      .article-body p, .article-body li { font-size: 0.95rem; }
+    }
   </style>
 </head>
 <body>
