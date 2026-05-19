@@ -64,6 +64,16 @@
       .dropdown-menu a{padding:0.4rem 0;border:none;}
       .article-hero{height:280px;}
     }
+
+    /* laptop specific — 13" to 15" screens */
+    @media (min-width: 769px) and (max-width: 1440px) {
+      .page-header h1 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); }
+      .page-header p { font-size: 0.95rem; }
+      .article-hero-text h1 { font-size: clamp(1.6rem, 3vw, 2.4rem); }
+      .article-body h2 { font-size: 1.3rem; }
+      .article-intro { font-size: 1.05rem; }
+      .article-body p, .article-body li { font-size: 0.95rem; }
+    }
   </style>
 </head>
 <body>
@@ -110,45 +120,46 @@
     <p>Later, Buddhist monks are stated to have carried it to Japan, where it became deeply tied to Zen Buddhism and became the centerpiece of the elegant ritual of the Japanese tea ceremony. Gradually, green tea made its way across Asia, Europe, and eventually to the West, establishing its presence in the global market.</p>
 
     <h2>Types of Green Tea from China and Japan</h2>
-    <p>Green tea undergoes minimal processing. Unlike black tea, which is fully oxidized to provide a stronger flavor and color, green tea leaves are steamed or pan-fired, preserving their color and mild flavor. Depending on where it's grown, each variety bundles specific characteristics in terms of color, taste, and aroma. The popular green tea types from China and Japan include:</p>
+    <p>Green tea undergoes minimal processing. Unlike black tea, which is fully oxidized to provide a stronger flavor and color, green tea leaves are steamed or pan-fired, preserving their color and mild flavor. Depending on where it's grown, each variety bundles specific characteristics in terms of color, taste, and aroma. Although there are many known varieties, the popular green tea types from China and Japan include:</p>
     <ul>
       <li><strong>Longjing (China):</strong> Also known as Dragon Well tea, these tea leaves are pan-roasted to obtain a nutty, and slightly sweet flavor.</li>
-      <li><strong>Biluochun (China):</strong> Characterized by its curly leaves and floral aroma, the tea leaves when brewed render a subtle sweetness and a fruity taste.</li>
-      <li><strong>Huangshan Maofeng (China):</strong> One of the top teas on the list, grown in the Yellow Mountains. It comes with a lightly grassy flavor, a fresh aroma, and a fruity sweetness.</li>
-      <li><strong>Matcha (Japan):</strong> The leaves of this shade-grown tea plant are stone-ground into a fine powder and whisked into hot water, producing a frothy, vibrant green drink. Highly rich in antioxidants, as the entire leaf is consumed in powdered form.</li>
-      <li><strong>Sencha (Japan):</strong> A popular everyday tea made from needle-like leaves, with an earthy and refreshing flavor ranging from mild to astringent depending on the brewing time.</li>
-      <li><strong>Gyokuro (Japan):</strong> A shade-grown tea like matcha, with a deep green color and rich umami flavor, found to have the highest amino acid and caffeine content among Japanese green teas.</li>
+      <li><strong>Biluochun (China):</strong> Characterized by its curly leaves and floral aroma, the tea leaves, when brewed, render a subtle sweetness and a fruity taste.</li>
+      <li><strong>Huangshan Maofeng (China):</strong> One of the top teas on the list, this tea is grown in the Yellow Mountains. It comes with a lightly grassy flavor, has a fresh aroma, and a fruity sweetness.</li>
+      <li><strong>Matcha (Japan):</strong> The leaves of this shade-grown tea plant are stone-ground into a fine powder and whisked into hot water, producing a frothy, vibrant green drink. Matcha green tea is highly rich in antioxidants, as the entire leaf is consumed in powdered form <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11049459/" target="_blank" rel="noopener" style="color:var(--blue-rich);">[1]</a>.</li>
+      <li><strong>Sencha (Japan):</strong> A popular everyday tea made from needle-like leaves, the tea's brew possesses an earthy and refreshing flavor ranging from mild to astringent depending on the brewing time.</li>
+      <li><strong>Gyokuro (Japan):</strong> A shade-grown tea like matcha, with a deep green color and rich umami flavor, Gyokuro tea has been found to have the highest amino acid and caffeine content among Japanese green teas <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11720457/#foods-14-00103-t002" target="_blank" rel="noopener" style="color:var(--blue-rich);">[2]</a>, <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11720457/#sec4-foods-14-00103" target="_blank" rel="noopener" style="color:var(--blue-rich);">[3]</a>.</li>
     </ul>
 
     <h2>Green Tea Benefits</h2>
-    <p>Green tea is not only favored for its refreshing taste but also for its multiple health benefits. Some of its most well-known benefits include:</p>
+    <p>Green tea is not only favored for its refreshing taste but also for multiple health benefits. Some of its most well-known benefits include:</p>
     <ul>
-      <li><strong>Rich in antioxidants:</strong> Green tea contains polyphenols, especially EGCG (epigallocatechin gallate), which help fight free radicals and reduce cell damage, thus preventing or lowering the incidence of certain types of cancer.</li>
-      <li><strong>Supports heart health:</strong> Scientific studies indicate that drinking green tea can help lower cholesterol, prevent plaque formation, and reduce the risk of coronary heart disease.</li>
-      <li><strong>Increases alertness and calms the mind:</strong> The balanced combination of caffeine and the amino acid L-theanine improves attention and performance while promoting relaxation.</li>
-      <li><strong>Strengthens immunity:</strong> The natural catechin compounds present in green tea possess antibacterial and antiviral properties, helping the body defend against various viruses that cause infections.</li>
-      <li><strong>Promotes healthy skin:</strong> Antioxidants in green tea may slow signs of aging and protect the skin from sun damage.</li>
-      <li><strong>Boosts metabolism:</strong> Drinking green tea regularly may support weight management by enhancing fat oxidation and improving metabolism.</li>
+      <li><strong>Rich in antioxidants:</strong> Green tea contains polyphenols, especially EGCG (epigallocatechin gallate), which help fight free radicals and reduce cell damage, thus preventing/lowering the incidence of certain types of cancer <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7084675/" target="_blank" rel="noopener" style="color:var(--blue-rich);">[4]</a>.</li>
+      <li><strong>Supports heart health:</strong> Scientific studies indicate that drinking green tea can help lower cholesterol, prevent plaque formation, and reduce the risk of coronary heart disease <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4843789/" target="_blank" rel="noopener" style="color:var(--blue-rich);">[5]</a>.</li>
+      <li><strong>Increases alertness and calms the mind:</strong> The balanced combination of caffeine and the amino acid L-theanine, in green tea, improves attention and performance while promoting relaxation <a href="https://pubmed.ncbi.nlm.nih.gov/28056735/" target="_blank" rel="noopener" style="color:var(--blue-rich);">[6]</a>.</li>
+      <li><strong>Strengthens immunity:</strong> The natural catechin compounds present in green tea possess antibacterial and antiviral properties, helping the body defend against various viruses that cause infections <a href="https://pubmed.ncbi.nlm.nih.gov/28805687/" target="_blank" rel="noopener" style="color:var(--blue-rich);">[7]</a>.</li>
+      <li><strong>Promotes healthy skin:</strong> Antioxidants in green tea may slow signs of aging and protect the skin from sun damage <a href="https://pubmed.ncbi.nlm.nih.gov/22792414/" target="_blank" rel="noopener" style="color:var(--blue-rich);">[8]</a>.</li>
+      <li><strong>Boosts metabolism:</strong> Drinking green tea regularly may support weight management by enhancing fat oxidation and improving metabolism <a href="https://pubmed.ncbi.nlm.nih.gov/21115335/" target="_blank" rel="noopener" style="color:var(--blue-rich);">[9]</a>.</li>
     </ul>
 
     <h2>Green Tea Tidbits</h2>
+    <p>Here is some interesting information you might want to know about green tea:</p>
     <ul>
-      <li><strong>One plant, many teas:</strong> Whether green, black, or white tea, they all trace back to the same source — the Camellia sinensis plant. Their unique flavors and colors stem from different processing and steeping methods.</li>
-      <li><strong>Japan's tea ceremonies:</strong> In Japan, the traditional chanoyu ceremony involves making and drinking matcha tea as a meditative ritual of grace and mindfulness.</li>
-      <li><strong>Antique treasures:</strong> In 2016, the Guinness World Records revealed that archaeologists found 2,100-year-old tea leaves in the Chinese emperor Liu Qi's tomb, identifiable as tea even after centuries underground.</li>
-      <li><strong>A global favorite:</strong> After water, tea is the most consumed beverage worldwide, with green tea alone accounting for around 20% of total tea production.</li>
-      <li><strong>Flavor fusions:</strong> Green tea pairs well with lemon, raspberry, mint, ginger, turmeric, cinnamon, rose, and jasmine for varied and unique flavors.</li>
-      <li><strong>Modern innovations:</strong> Matcha tea powder is often incorporated into lattes, desserts, and smoothies, and green tea extracts feature as a main ingredient in many skincare products.</li>
+      <li><strong>One plant, many teas:</strong> Whether green, black, or white tea, they all trace back to the same source, the Camellia sinensis plant. Their unique flavors and colors stem from different processing and steeping methods. That's the reason why all green tea varieties, when brewed, may not be exactly green. In fact, they vary from light yellow to deep green.</li>
+      <li><strong>Japan's tea ceremonies:</strong> In Japan, the traditional chanoyu ceremony involves the act of making and drinking matcha tea into a meditative ritual of grace and mindfulness.</li>
+      <li><strong>Antique treasures:</strong> In 2016, the Guinness World Records revealed that archaeologists found 2,100-year-old tea leaves in the Chinese emperor Liu Qi's tomb. The leaves were identifiable as tea even after centuries underground.</li>
+      <li><strong>A global favorite:</strong> After water, tea is stated to be the most consumed beverage worldwide, with green tea alone accounting for around 20% of total tea production.</li>
+      <li><strong>Flavor fusions:</strong> Green tea pairs well with a range of ingredients to create unique flavors. Green tea infusions with fruits such as lemon or raspberry, herbs such as mint or ginger, spices including turmeric and cinnamon, or even floral notes of rose or jasmine, make great pairings for varied tastes.</li>
+      <li><strong>Modern innovations:</strong> Matcha tea powder is often incorporated into lattes, desserts, and smoothies for a fresh, delightful twist, and green tea extracts feature as a main ingredient in many skincare products.</li>
     </ul>
 
     <h2>Possible Green Tea Side Effects</h2>
-    <p>Even something as healthy as green tea isn't without its downsides. Consumption of green tea in the form of extracts at higher potencies can have adverse effects. A few side effects to be aware of if consumed in excess:</p>
+    <p>Even something as healthy as green tea isn't without its downsides. Beneficial as it is, consumption of green tea extracts (supplemental forms) can have adverse effects at higher potencies. Listed are a few side effects to be aware of, if consumed in excess <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2848091/#sec1_3" target="_blank" rel="noopener" style="color:var(--blue-rich);">[10]</a>, <a href="https://www.nccih.nih.gov/health/green-tea" target="_blank" rel="noopener" style="color:var(--blue-rich);">[11]</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/21538851/" target="_blank" rel="noopener" style="color:var(--blue-rich);">[12]</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/27830072/" target="_blank" rel="noopener" style="color:var(--blue-rich);">[13]</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/39263133/" target="_blank" rel="noopener" style="color:var(--blue-rich);">[14]</a>:</p>
     <ul>
-      <li><strong>Caffeine jitters:</strong> High doses can cause restlessness or sleep problems.</li>
-      <li><strong>Digestive issues:</strong> Drinking green tea on an empty stomach can sometimes result in acidity; high dose extracts may lead to nausea or abdominal issues.</li>
-      <li><strong>Nutrient absorption:</strong> The tannins in green tea may reduce the body's ability to absorb iron from food.</li>
-      <li><strong>Medication interactions:</strong> Green tea can interfere with certain medicines, including blood thinners and some heart drugs — consult a doctor if you're on prescriptions.</li>
-      <li><strong>Supplement risks:</strong> Very high doses of concentrated green tea extracts have, in rare cases, been linked to liver problems.</li>
+      <li><strong>Caffeine jitters:</strong> Green teas contain caffeine, and high doses can cause restlessness or sleep problems.</li>
+      <li><strong>Digestive issues:</strong> Drinking green tea on an empty stomach can sometimes result in acidity. Using high-dose extracts may lead to nausea or other abdominal issues.</li>
+      <li><strong>Nutrient absorption:</strong> Scientific studies on specific cases suggest that the tannins in green tea may reduce the body's ability to absorb iron from food.</li>
+      <li><strong>Medication interactions:</strong> Green tea can interfere with certain medications, including blood thinners and some heart drugs — consult a doctor if you are on prescriptions.</li>
+      <li><strong>Supplement risks:</strong> Very high doses of concentrated green tea extracts (capsules or powders) have, in rare cases, been linked to liver problems.</li>
     </ul>
 
     <h2>Final Reflections</h2>
