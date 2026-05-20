@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Primary SEO -->
-  <title>Rowords | AI Content Editing, SEO Writing & Proofreading</title>
+  <title>Rowords | SEO Writing, Proofreading & AI Content Editing</title>
   <meta name="description" content="Content writer and editor based in Bengaluru, India, specialising in AI content editing and humanisation, SEO blog writing, proofreading, and white-label content for agencies and businesses worldwide." />
-  <meta name="keywords" content="content writer India, AI content editing, AI content humanisation, SEO blog writing, proofreading, copy editing, white-label content, content editor Bengaluru, freelance content writer, agency content support" />
+  <meta name="keywords" content="content writer India, SEO blog writing, proofreading, copy editing, white-label content, content editor Bengaluru, agency content support, AI content editing, AI content humanisation, freelance content writer" />
   <meta name="author" content="Sathya Jameson" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://rowords.com/" />
@@ -15,7 +15,7 @@
   <!-- Open Graph / Facebook / LinkedIn -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://rowords.com/" />
-  <meta property="og:title" content="Rowords | AI Content Editing, SEO Writing & Proofreading" />
+  <meta property="og:title" content="Rowords | SEO Writing, Proofreading & AI Content Editing" />
   <meta property="og:description" content="Content writer and editor based in Bengaluru, India, specialising in AI content editing and humanisation, SEO blog writing, proofreading, and white-label content for agencies and businesses worldwide." />
   <meta property="og:image" content="https://rowords.com/og-image.png" />
   <meta property="og:image:width" content="1200" />
@@ -26,7 +26,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://rowords.com/" />
-  <meta name="twitter:title" content="Rowords | AI Content Editing, SEO Writing & Proofreading" />
+  <meta name="twitter:title" content="Rowords | SEO Writing, Proofreading & AI Content Editing" />
   <meta name="twitter:description" content="Content writer and editor based in Bengaluru, India, specialising in AI content editing and humanisation, SEO blog writing, proofreading, and white-label content for agencies and businesses worldwide." />
   <meta name="twitter:image" content="https://rowords.com/og-image.png" />
   <meta name="twitter:site" content="@rowords_cs" />
@@ -53,12 +53,12 @@
       "addressCountry": "IN"
     },
     "serviceType": [
-      "AI Content Editing",
-      "AI Content Humanisation",
       "SEO Blog Writing",
       "Proofreading",
       "Copy Editing",
-      "White-label Content Writing"
+      "White-label Content Writing",
+      "AI Content Editing",
+      "AI Content Humanisation"
     ],
     "areaServed": "Worldwide",
     "sameAs": [
@@ -282,12 +282,12 @@
 
     .hero-headline {
       font-family: 'Playfair Display', serif;
-      font-weight: 800;
-      font-size: clamp(2rem, 4vw, 3.6rem);
-      line-height: 1.1;
+      font-weight: 700;
+      font-size: clamp(1.9rem, 3.2vw, 2.9rem);
+      line-height: 1.2;
       color: var(--title-hero);
       margin-bottom: 1.75rem;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.01em;
     }
     .hero-headline em {
       font-style: italic;
@@ -389,7 +389,7 @@
 
     /* laptop specific — 13" to 15" screens */
     @media (min-width: 769px) and (max-width: 1440px) {
-      .hero-headline { font-size: clamp(2rem, 3.5vw, 3.2rem); }
+      .hero-headline { font-size: clamp(1.8rem, 2.8vw, 2.6rem); }
       .hero-sub { font-size: 1rem; }
       .ttl { font-size: clamp(1.5rem, 2.5vw, 2.2rem); }
       section { padding: 5rem 5vw; }
@@ -452,6 +452,105 @@
       color: var(--blue-soft);
       padding: 0.32rem 0.8rem;
     }
+
+    /* ── WHO I WORK WITH ── */
+    .clients-block {
+      margin-top: 4rem;
+      padding-top: 3.5rem;
+      border-top: 1px solid var(--rule-light);
+    }
+
+    .clients-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--blue-rich);
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1rem;
+    }
+    .clients-label::before {
+      content: '';
+      display: block;
+      width: 28px; height: 2px;
+      background: var(--blue-rich);
+    }
+
+    .clients-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      color: var(--blue-navy);
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    .clients-intro {
+      font-size: 0.97rem;
+      color: var(--ink-soft);
+      max-width: 540px;
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
+    }
+
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .client-card {
+      background: var(--white);
+      border-left: 3px solid var(--blue-light);
+      padding: 1.25rem 1.5rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .client-card:hover {
+      border-left-color: var(--blue-rich);
+      transform: translateX(4px);
+    }
+
+    .client-card-title {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--blue-navy);
+      margin-bottom: 0.3rem;
+    }
+
+    .client-card-desc {
+      font-size: 0.82rem;
+      color: var(--ink-soft);
+      line-height: 1.6;
+    }
+
+    .pricing-note {
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+      line-height: 1.8;
+      padding: 1.5rem 2rem;
+      border-left: 3px solid var(--blue-light);
+      background: var(--white);
+      max-width: 620px;
+    }
+    .scale-note {
+      margin-top: 2.5rem;
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+      line-height: 1.8;
+      max-width: 680px;
+      font-style: italic;
+    }
+    .pricing-note a {
+      color: var(--blue-rich);
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid var(--rule-light);
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .pricing-note a:hover { color: var(--blue-deep); border-color: var(--blue-rich); }
 
     /* ── WRITING WORK — rich blue bg ── */
     #writing-work { background: var(--blue-rich); }
@@ -874,18 +973,6 @@
     <div class="services-grid">
       <div class="service-card reveal">
         <p class="service-num">01</p>
-        <h3 class="service-title">AI Content Editing and Humanization</h3>
-        <p class="service-body">AI tools generate drafts fast — but raw AI content often sounds flat, repetitive, and unconvincing to real readers. I transform AI-generated text into polished content that sounds natural, credible, and on-brand.<br><br>I remove AI "tells," fix awkward phrasing, verify facts, sharpen tone, and ensure your content meets editorial standards. This is a full editorial pass for clarity and credibility — not light proofreading. Ideal for marketing teams, startups, and agencies that need a human editor to make AI output actually work.</p>
-        <div class="service-tags">
-          <span class="service-tag">AI editing</span>
-          <span class="service-tag">Humanization</span>
-          <span class="service-tag">Fact-checking</span>
-          <span class="service-tag">Tone refinement</span>
-        </div>
-      </div>
-
-      <div class="service-card reveal">
-        <p class="service-num">02</p>
         <h3 class="service-title">SEO Blog Writing and Long-form Articles</h3>
         <p class="service-body">Ranking on Google requires more than keyword stuffing — it demands well-researched, authoritatively written content that answers real questions and earns trust. I write SEO-optimized blog posts and long-form articles structured for both search engines and human readers.<br><br>Every piece includes keyword integration, internal linking guidance, meta descriptions, and readability optimization. Whether you need a one-off article or a consistent monthly content calendar, I deliver content that builds organic traffic over time.</p>
         <div class="service-tags">
@@ -897,7 +984,7 @@
       </div>
 
       <div class="service-card reveal">
-        <p class="service-num">03</p>
+        <p class="service-num">02</p>
         <h3 class="service-title">Proofreading and Copy Editing</h3>
         <p class="service-body">A single error or inconsistent tone can quietly undermine your brand's credibility. I review your content for grammar, clarity, sentence structure, tone consistency, factual accuracy, and style guide adherence — making certain it is clean, precise, and ready to publish.<br><br>Whether it's web copy, articles, or marketing materials, I refine flow and readability so your content lands as smooth, consistent, and professional.</p>
         <div class="service-tags">
@@ -909,20 +996,49 @@
       </div>
 
       <div class="service-card reveal">
-        <p class="service-num">04</p>
-        <h3 class="service-title">Content for Agencies</h3>
-        <p class="service-body">Reliable freelance writing and editing support for content, media, and branding agencies. I handle article creation, editing overflow, and white-labeled writing that is SEO-optimized, delivered on time, and tailored to meet your brand guidelines.<br><br>If your team is at capacity and you need a dependable extra pair of hands that understands editorial standards — this is built for you.</p>
+        <p class="service-num">03</p>
+        <h3 class="service-title">AI Content Editing and Humanization</h3>
+        <p class="service-body">AI tools generate drafts fast — but raw AI content often sounds flat, repetitive, and unconvincing to real readers. I transform AI-generated text into polished content that sounds natural, credible, and on-brand.<br><br>I remove AI "tells," fix awkward phrasing, verify facts, sharpen tone, and ensure your content meets editorial standards. This is a full editorial pass for clarity and credibility — not light proofreading. Ideal for marketing teams, startups, and agencies that need a human editor to make AI output actually work.</p>
         <div class="service-tags">
-          <span class="service-tag">White-label</span>
-          <span class="service-tag">Agency support</span>
-          <span class="service-tag">Overflow editing</span>
-          <span class="service-tag">On-time delivery</span>
+          <span class="service-tag">AI editing</span>
+          <span class="service-tag">Humanization</span>
+          <span class="service-tag">Fact-checking</span>
+          <span class="service-tag">Tone refinement</span>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- WRITING WORK -->
+    <!-- WHO I WORK WITH -->
+    <div class="clients-block">
+      <p class="clients-label reveal">Who I work with</p>
+      <h3 class="clients-title reveal">Content support for businesses that take quality seriously.</h3>
+      <p class="clients-intro reveal">Whether you're building from scratch or scaling fast, I work with teams and individuals who understand that good content is an investment, not a commodity.</p>
+      <div class="clients-grid">
+        <div class="client-card reveal">
+          <p class="client-card-title">Startups and Small Businesses</p>
+          <p class="client-card-desc">Building a content presence from scratch and needing a reliable writer who delivers without hand-holding.</p>
+        </div>
+        <div class="client-card reveal">
+          <p class="client-card-title">Marketing and Content Teams</p>
+          <p class="client-card-desc">In-house teams at capacity who need a dependable extra pair of hands that understands editorial standards.</p>
+        </div>
+        <div class="client-card reveal">
+          <p class="client-card-title">Content and Branding Agencies</p>
+          <p class="client-card-desc">Agencies looking for white-label writing and editing support — delivered on brief, on brand, and on time.</p>
+        </div>
+        <div class="client-card reveal">
+          <p class="client-card-title">B2B Companies</p>
+          <p class="client-card-desc">Businesses that need complex ideas communicated clearly to professional and technical audiences.</p>
+        </div>
+        <div class="client-card reveal">
+          <p class="client-card-title">Coaches and Consultants</p>
+          <p class="client-card-desc">Independent professionals building thought leadership and authority through consistent, well-crafted content.</p>
+        </div>
+      </div>
+      <p class="scale-note reveal">Rowords is built with scale in mind. The same editorial standards and personal attention that define every project today will extend across a growing network of specialist writers across geographies — bringing the right expertise, cultural context, and voice to every brief, for every audience.</p>
+      <p class="pricing-note reveal">Every project is scoped to your brief and priced on the value it delivers — not the word count. <a href="#contact">Get in touch</a> to discuss what you need.</p>
+    </div>
+  </section>
   <section id="writing-work">
     <p class="lbl lbl-soft reveal">Writing Work</p>
     <h2 class="ttl ttl-white reveal">Writing that speaks for itself.</h2>
@@ -1040,7 +1156,7 @@
     <div class="contact-inner">
       <p class="lbl lbl-soft reveal">Contact</p>
       <h2 class="ttl ttl-light reveal">Let's talk about your content.</h2>
-      <p class="intro intro-light reveal">Whether you have a brief, a project, or just a question — send an email and I'll get back to you promptly.</p>
+      <p class="intro intro-light reveal">Whether it's a single article or an ongoing content programme — let's talk about what good content can do for your business.</p>
 
       <div class="contact-email-block reveal">
         <p class="contact-prompt">Reach me directly</p>
