@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Content Writing Portfolio — Published Articles | Rowords</title>
-  <meta name="description" content="Published content writing portfolio of Sathya Jameson — articles and web content across fintech, technology, and workplace topics for global clients." />
+  <title>Writing Portfolio | Rowords</title>
+  <meta name="description" content="Writing portfolio of Sathya Jameson — published client work across fintech, technology, and leadership topics, plus original sample articles." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fahkwang:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -310,9 +310,85 @@
 
     .footer-copy {
       font-size: 0.74rem;
-      color: var(--ink-soft);
+      color: var(--blue-soft);
       letter-spacing: 0.05em;
     }
+
+    /* ── SECTION DIVIDER ── */
+    .section-divider {
+      max-width: 1200px;
+      margin: 4rem auto 0;
+      padding-top: 3.5rem;
+      border-top: 1px solid var(--rule-light);
+    }
+
+    .section-sub-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--blue-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      margin-bottom: 2rem;
+    }
+    .section-sub-label::before,
+    .section-sub-label::after {
+      content: '';
+      display: block;
+      width: 28px; height: 1.5px;
+      background: var(--blue-light);
+    }
+
+    /* ── SAMPLE CARDS ── */
+    .sample-card {
+      background: var(--white);
+      border-top: 4px solid var(--blue-light);
+      box-shadow: 0 2px 16px rgba(58,124,165,0.07);
+      overflow: hidden;
+      transition: transform 0.25s, box-shadow 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+    .sample-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 48px rgba(58,124,165,0.14);
+    }
+    .sample-card-image {
+      width: 100%; height: 220px;
+      object-fit: cover; display: block;
+      background: var(--blue-pale);
+    }
+    .sample-card-body {
+      padding: 1.75rem 2rem 2rem;
+      display: flex; flex-direction: column; flex: 1; gap: 0.75rem;
+    }
+    .sample-card-tag {
+      font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--blue-mid);
+    }
+    .sample-card-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700; font-size: 1.2rem;
+      color: var(--blue-navy); line-height: 1.3;
+    }
+    .sample-card-excerpt {
+      font-size: 0.92rem; color: var(--ink-soft);
+      line-height: 1.8; flex: 1;
+    }
+    .sample-card-link {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--blue-rich); text-decoration: none;
+      margin-top: 0.5rem; transition: gap 0.2s, color 0.2s;
+    }
+    .sample-card-link:hover { gap: 0.8rem; color: var(--blue-deep); }
+    .sample-card-link svg { transition: transform 0.2s; }
+    .sample-card-link:hover svg { transform: translateX(3px); }
 
     /* ── REVEAL ── */
     .reveal {
@@ -397,7 +473,6 @@
       <li><a href="../../index.html">Home</a></li>
       <li><a href="../../index.html#services">Writing Services</a></li>
       <li><a href="portfolio.html" class="active">Portfolio</a></li>
-      <li><a href="../samples/samples.html">Sample Articles</a></li>
       <li><a href="../../index.html#about">About</a></li>
       <li><a href="../../index.html#contact">Contact</a></li>
     </ul>
@@ -408,13 +483,16 @@
 
   <!-- PAGE HEADER -->
   <div class="page-header">
-    <p class="page-header-label">Client Work</p>
+    <p class="page-header-label">Writing Work</p>
     <h1>Portfolio</h1>
-    <p>Published articles and writing projects across industries and formats.</p>
+    <p>A selection of published articles and writing projects across industries and formats.</p>
   </div>
 
   <!-- PORTFOLIO GRID -->
   <div class="portfolio-section">
+
+    <p class="section-sub-label">Client Work</p>
+
     <div class="portfolio-grid">
 
       <div class="portfolio-card reveal">
@@ -477,7 +555,7 @@
         <div class="portfolio-card-body">
           <p class="portfolio-card-tag">Fintech & Technology · Nanonets</p>
           <h2 class="portfolio-card-title">Document Data Capture: A Complete Guide</h2>
-          <p class="portfolio-card-desc">A complete guide to document data capture — covering OCR, intelligent automation, use cases across industries, and how to choose the right solution.</p>
+          <p class="portfolio-card-desc">A complete guide to document data capture, covering OCR, intelligent automation, use cases across industries, and how to choose the right solution.</p>
           <a href="https://nanonets.com/blog/document-data-capture/" target="_blank" rel="noopener" class="portfolio-card-link">
             Read article
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -486,6 +564,35 @@
       </div>
 
     </div>
+
+    <!-- WRITING SAMPLES -->
+    <div class="section-divider">
+      <p class="section-sub-label">Writing Samples</p>
+      <div class="portfolio-grid">
+
+        <div class="sample-card reveal">
+          <img src="../../images/samples/Green Tea.png" alt="Green Tea" class="sample-card-image" />
+          <div class="sample-card-body">
+            <p class="sample-card-tag">Food &amp; Wellness</p>
+            <h2 class="sample-card-title">Green Tea — From Ancient Roots to Modern Wellness Benefits</h2>
+            <p class="sample-card-excerpt">From a Chinese emperor's accidental discovery in 2737 BC to matcha lattes in modern cafes, this is a deep dive into green tea's history, varieties, and science-backed health benefits.</p>
+            <a href="../samples/green-tea.html" class="sample-card-link">Read article <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+
+        <div class="sample-card reveal">
+          <img src="../../images/samples/Honey.png" alt="Honey" class="sample-card-image" />
+          <div class="sample-card-body">
+            <p class="sample-card-tag">Food &amp; Wellness</p>
+            <h2 class="sample-card-title">Honey — The Sweet Elixir</h2>
+            <p class="sample-card-excerpt">More than a sweetener, honey is a food, a medicine, and a cosmetic with a history stretching back 8,000 years. A look at what makes this golden liquid truly remarkable.</p>
+            <a href="../samples/honey.html" class="sample-card-link">Read article <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 
   <!-- FOOTER -->
