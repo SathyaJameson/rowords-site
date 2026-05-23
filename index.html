@@ -45,7 +45,7 @@
       "@type": "Person",
       "name": "Sathya Jameson",
       "jobTitle": "Content Writer & Editor",
-      "sameAs": "https://www.linkedin.com/in/sathyajameson/"
+      "sameAs": "https://www.linkedin.com/company/rowords/"
     },
     "address": {
       "@type": "PostalAddress",
@@ -66,7 +66,7 @@
     ],
     "areaServed": "Worldwide",
     "sameAs": [
-      "https://www.linkedin.com/in/sathyajameson/",
+      "https://www.linkedin.com/company/rowords/",
       "https://x.com/rowords_cs"
     ]
   }
@@ -351,18 +351,11 @@
       font-weight: 600;
       letter-spacing: 0.24em;
       text-transform: uppercase;
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
+      display: block;
       margin-bottom: 1rem;
     }
-    .lbl::before {
-      display: none;
-    }
     .lbl-blue { color: var(--blue-rich); }
-    .lbl-blue::before { background: var(--blue-rich); }
     .lbl-soft { color: var(--blue-light); }
-    .lbl-soft::before { background: var(--blue-light); }
 
     /* titles */
     .ttl {
@@ -463,18 +456,13 @@
     }
 
     .clients-label {
-      font-size: 0.7rem;
+      font-size: 0.72rem;
       font-weight: 600;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.24em;
       text-transform: uppercase;
       color: var(--blue-rich);
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
+      display: block;
       margin-bottom: 1rem;
-    }
-    .clients-label::before {
-      display: none;
     }
 
     .clients-title {
@@ -536,9 +524,10 @@
     }
     .scale-note {
       margin-top: 2.5rem;
-      font-size: 0.95rem;
-      color: var(--ink-soft);
-      line-height: 1.8;
+      font-family: 'Source Serif 4', serif;
+      font-size: 1.05rem;
+      color: var(--ink-mid);
+      line-height: 1.85;
       max-width: 680px;
       font-style: italic;
     }
@@ -819,8 +808,20 @@
     }
     .testimonial-company-link:hover { color: var(--blue-deep); }
 
-    /* ── CONTACT — lighter blue ── */
-    #contact { background: var(--blue-deep); }
+    .footer-social {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .contact-location {
+      margin-top: 1.5rem;
+      font-size: 0.88rem;
+      color: var(--blue-soft);
+      line-height: 1.7;
+    }
+
+    /* ── FOOTER ── */
     footer {
       background: var(--blue-ink);
       padding: 2.5rem 5vw;
@@ -837,12 +838,12 @@
       font-weight: 400;
       font-size: 1.15rem;
       letter-spacing: 0.05em;
-      color: #C8E6FA;
+      color: var(--blue-light);
     }
 
     .footer-copy {
       font-size: 0.74rem;
-      color: var(--ink-soft);
+      color: var(--blue-soft);
       letter-spacing: 0.05em;
     }
 
@@ -920,7 +921,8 @@
       .services-grid { grid-template-columns: 1fr; }
       .work-links { grid-template-columns: 1fr; }
       .testimonials-grid { grid-template-columns: 1fr; }
-      footer { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+      footer { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+      .footer-social { gap: 1rem; }
     }
   </style>
 </head>
@@ -933,7 +935,6 @@
       <li><a href="#home">Home</a></li>
       <li><a href="#services">Writing Services</a></li>
       <li><a href="writing-work/portfolio/portfolio.html">Portfolio</a></li>
-      <li><a href="writing-work/samples/samples.html">Sample Articles</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -950,7 +951,7 @@
         <em>Every time.</em>
       </h1>
       <p class="hero-sub">
-        Content writing, professional editing, and white-label support — for businesses that demand quality. Based in Bengaluru (Bangalore), India, working with clients across the US, UK, and beyond.
+        Content writing, professional editing, and white-label support for businesses that demand quality.
       </p>
       <div class="hero-btns">
         <a href="#contact" class="btn-primary">
@@ -966,13 +967,13 @@
   <section id="services">
     <p class="lbl lbl-blue reveal">What we offer</p>
     <h2 class="ttl ttl-accent reveal">Writing services for businesses<br>that value quality.</h2>
-    <p class="intro intro-dark reveal">Each service is built around one goal — content that works for your audience, your brand, and your bottom line.</p>
+    <p class="intro intro-dark reveal">Each service is built around one goal: content that works for your audience, your brand, and your bottom line.</p>
 
     <div class="services-grid">
       <div class="service-card reveal">
         <p class="service-num">01</p>
         <h3 class="service-title">Content Writing</h3>
-        <p class="service-body">We write blogs, web articles, newsletters, and industry news content — researched, well-structured, and written for real readers. Every piece is crafted with search intent in mind, so your content not only reads well but works hard for your business.<br><br>Whether you need a single article, a steady publishing cadence, or regular newsletters, we bring the same editorial standard to every word — regardless of topic or industry.</p>
+        <p class="service-body">We write blogs, web articles, newsletters, and industry news content: researched, well-structured, and written for real readers. Every piece is crafted with search intent in mind, so your content not only reads well but works hard for your business.<br><br>Whether you need a single article, a steady publishing cadence, or regular newsletters, we bring the same editorial standard to every word, regardless of topic or industry.</p>
         <div class="service-tags">
           <span class="service-tag">Blog posts</span>
           <span class="service-tag">Web articles</span>
@@ -984,7 +985,7 @@
       <div class="service-card reveal">
         <p class="service-num">02</p>
         <h3 class="service-title">Professional Content Editing</h3>
-        <p class="service-body">We edit, proofread, and refine content until it is clear, consistent, and ready to publish. Whether the draft came from your team or a subject matter expert, we make it read like it was written by a professional.<br><br>We review for grammar, clarity, sentence structure, tone consistency, factual accuracy, and style guide adherence — delivering content that is clean, precise, and polished to publication standard.</p>
+        <p class="service-body">We edit, proofread, and refine content until it is clear, consistent, and ready to publish. Whether the draft came from your team or a subject matter expert, we make it read like it was written by a professional.<br><br>We review for grammar, clarity, sentence structure, tone consistency, factual accuracy, and style guide adherence, delivering content that is clean, precise, and polished to publication standard.</p>
         <div class="service-tags">
           <span class="service-tag">Proofreading</span>
           <span class="service-tag">Copy editing</span>
@@ -996,7 +997,7 @@
       <div class="service-card reveal">
         <p class="service-num">03</p>
         <h3 class="service-title">White-label Content Support</h3>
-        <p class="service-body">Reliable writing and editing support for content, media, and branding agencies. We handle article creation, editing overflow, and white-label writing delivered on brief, on brand, and on time — under your name, with no attribution to us.<br><br>If your team is at capacity and you need a dependable extra pair of hands that understands editorial standards, this is built for you.</p>
+        <p class="service-body">Reliable writing and editing support for content, media, and branding agencies. We handle article creation, editing overflow, and white-label writing delivered on brief, on brand, and on time, under your name, with no attribution to us.<br><br>If your team is at capacity and you need a dependable extra pair of hands that understands editorial standards, this is built for you.</p>
         <div class="service-tags">
           <span class="service-tag">White-label</span>
           <span class="service-tag">Agency support</span>
@@ -1005,6 +1006,8 @@
         </div>
       </div>
     </div>
+
+    <p class="scale-note reveal">Rowords is based in Bengaluru, India, and built with scale in mind. As we grow, we bring in specialist writers chosen for genuine subject knowledge, cultural fluency, and a high standard of English.</p>
 
     <!-- TESTIMONIALS inside services -->
     <div class="testimonials-block">
@@ -1039,9 +1042,9 @@
       </div>
     </div>
     <div class="clients-block">
-      <p class="clients-label reveal">Who I work with</p>
+      <p class="clients-label reveal">WHO WE WORK WITH</p>
       <h3 class="clients-title reveal">Content support for businesses that take quality seriously.</h3>
-      <p class="clients-intro reveal">Whether you're building from scratch or scaling fast, I work with teams and individuals who understand that good content is an investment, not a commodity.</p>
+      <p class="clients-intro reveal">Whether you're building from scratch or scaling fast, Rowords works with businesses and individuals who value thoughtful, high-quality content.</p>
       <div class="clients-grid">
         <div class="client-card reveal">
           <p class="client-card-title">Startups and Small Businesses</p>
@@ -1053,7 +1056,7 @@
         </div>
         <div class="client-card reveal">
           <p class="client-card-title">Content and Branding Agencies</p>
-          <p class="client-card-desc">Agencies looking for white-label writing and editing support — delivered on brief, on brand, and on time.</p>
+          <p class="client-card-desc">Agencies looking for white-label writing and editing support, delivered on brief, on brand, and on time.</p>
         </div>
         <div class="client-card reveal">
           <p class="client-card-title">B2B Companies</p>
@@ -1064,11 +1067,10 @@
           <p class="client-card-desc">Independent professionals building thought leadership and authority through consistent, well-crafted content.</p>
         </div>
       </div>
-      <p class="scale-note reveal">Rowords is built with scale in mind. As we grow, we aim to collaborate with specialist writers across domains and geographies to deliver original, well-researched content shaped by subject understanding, cultural context, and the right voice for every audience.</p>
       <p class="pricing-note reveal">
         <strong>Pricing</strong><br>
-        We operate on a milestone-based prepaid model. Small orders are fully prepaid. Larger projects are split into milestones — so you only pay for the next stage once the previous one meets your approval.<br><br>
-        Pricing is based on content type, volume, and turnaround. <a href="#contact">Get in touch</a> for a quick quote — most clients hear back within 24 hours.
+        We operate on a milestone-based prepaid model. Small orders are fully prepaid. Larger projects are split into milestones, so you only pay for the next stage once the previous one meets your approval.<br><br>
+        Pricing is based on content type, volume, and turnaround. <a href="#contact">Get in touch</a> for a quick quote. Most clients hear back within 24 hours.
       </p>
     </div>
   </section>
@@ -1084,7 +1086,7 @@
         <p>When content is unclear, generic, or sounds like it came from a chatbot, your audience notices. That's where I come in.</p>
         <div class="about-pull">"You get a writer who delivers work on time and actually sounds like your brand."</div>
         <p>A content writer and editor with over a decade of experience, I help businesses communicate with clarity and credibility. I've written and edited content for UK and US-based companies across multiple industries.</p>
-        <p>My background spans original content writing, editorial management, B2B research content, and AI content refinement. I understand both the craft of writing and the operational realities of content teams — having engaged in content strategy and processes from the inside.</p>
+        <p>My background spans original content writing, editorial management, B2B research content, and AI content refinement. I understand both the craft of writing and the operational realities of content teams, having engaged in content strategy and processes from the inside.</p>
 
         <div class="experience-list">
           <div class="experience-item">
@@ -1125,31 +1127,31 @@
     <div class="contact-inner">
       <p class="lbl lbl-soft reveal">Contact</p>
       <h2 class="ttl ttl-light reveal">Let's talk about your content.</h2>
-      <p class="intro intro-light reveal">Whether it's a single article or an ongoing content programme — let's talk about what good content can do for your business.</p>
+      <p class="intro intro-light reveal">Whether it's a single article or an ongoing content programme, let's talk about what good content can do for your business.</p>
 
       <div class="contact-email-block reveal">
-        <p class="contact-prompt">Reach me directly</p>
+        <p class="contact-prompt">Start a conversation</p>
         <a href="mailto:sathya.jameson@rowords.com" class="contact-email-link">
           sathya.jameson@rowords.com
         </a>
       </div>
 
-      <div class="contact-social reveal">
-        <a href="https://www.linkedin.com/in/sathyajameson/" target="_blank" rel="noopener" class="social-link">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-          LinkedIn
-        </a>
-        <a href="https://x.com/rowords_cs" target="_blank" rel="noopener" class="social-link">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          X / Twitter
-        </a>
-      </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
     <span class="footer-logo">Rowords&#8482;</span>
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/company/rowords/" target="_blank" rel="noopener" class="social-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://x.com/rowords_cs" target="_blank" rel="noopener" class="social-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X / Twitter
+      </a>
+    </div>
     <span class="footer-copy">© 2026 Rowords&#8482;. All rights reserved. · Bengaluru, India</span>
   </footer>
 
