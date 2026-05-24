@@ -183,6 +183,8 @@
     }
     .nav-links a:hover { color: var(--blue-light); }
     .nav-links a:hover::after { width: 100%; }
+    .nav-links a.active { color: var(--blue-light); }
+    .nav-links a.active::after { width: 100%; }
 
     /* dropdown */
     .nav-dropdown { position: relative; }
@@ -1178,7 +1180,7 @@
           });
         }
       });
-    }, { rootMargin: '-40% 0px -55% 0px' });
+    }, { rootMargin: '-20% 0px -70% 0px' });
     sections.forEach(section => sectionObserver.observe(section));
 
     const reveals = document.querySelectorAll('.reveal');
