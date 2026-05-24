@@ -75,7 +75,15 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fahkwang:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Source+Serif+4:ital,wght@0,400;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Preload critical fonts -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fahkwang:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Source+Serif+4:ital,wght@0,400;1,400&family=Inter:wght@400;500;600&display=swap" />
+
+  <!-- Load fonts non-blocking -->
+  <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Fahkwang:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Source+Serif+4:ital,wght@0,400;1,400&family=Inter:wght@400;500;600&display=swap" />
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fahkwang:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Source+Serif+4:ital,wght@0,400;1,400&family=Inter:wght@400;500;600&display=swap" />
+  </noscript>
 
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230D1B2A'/%3E%3Ctext x='50%25' y='52%25' dominant-baseline='central' text-anchor='middle' font-family='Fahkwang%2C serif' font-size='20' fill='%2390B4D4'%3ER%3C/text%3E%3C/svg%3E" />
 
@@ -144,7 +152,7 @@
       font-weight: 400;
       font-size: 1.55rem;
       letter-spacing: 0.05em;
-      color: #C8E6FA;
+      color: var(--blue-light);
       text-decoration: none;
     }
 
@@ -947,10 +955,10 @@
   <section id="home">
     <div class="hero-inner">
       <h1 class="hero-headline">
-        Content worth reading.
+        Writing you can rely on.
       </h1>
       <p class="hero-sub">
-        Content writing, professional editing, and white-label support for businesses that demand quality.
+        Content writing, professional editing, and white-label writing.
       </p>
       <div class="hero-btns">
         <a href="#contact" class="btn-primary">
@@ -965,7 +973,7 @@
   <!-- SERVICES -->
   <section id="services">
     <p class="lbl lbl-blue reveal">What we offer</p>
-    <h2 class="ttl ttl-accent reveal">Writing services for businesses<br>that value quality.</h2>
+    <h2 class="ttl ttl-accent reveal">Writing and editing services, done with care.</h2>
     <p class="intro intro-dark reveal">Each service is built around one goal: content that works for your audience, your brand, and your bottom line.</p>
 
     <div class="services-grid">
@@ -1042,8 +1050,8 @@
     </div>
     <div class="clients-block">
       <p class="clients-label reveal">WHO WE WORK WITH</p>
-      <h3 class="clients-title reveal">Content support for businesses that take quality seriously.</h3>
-      <p class="clients-intro reveal">Whether you're building from scratch or scaling fast, Rowords works with businesses and individuals who value thoughtful, high-quality content.</p>
+      <h3 class="clients-title reveal">Content support for businesses of all sizes.</h3>
+      <p class="clients-intro reveal">Whether you're a growing business or an established team, Rowords works with clients who need reliable, well-written content and a writer they can trust to deliver it.</p>
       <div class="clients-grid">
         <div class="client-card reveal">
           <p class="client-card-title">Startups and Small Businesses</p>
@@ -1069,7 +1077,7 @@
       <p class="pricing-note reveal">
         <strong>Pricing</strong><br>
         We operate on a milestone-based prepaid model. Small orders are fully prepaid. Larger projects are split into milestones, so you only pay for the next stage once the previous one meets your approval.<br><br>
-        Pricing is based on content type and volume. Each project includes writing, quality review, and reasonable revisions. <a href="#contact">Get in touch</a> for a quote.
+        Every project includes writing, quality review, and reasonable revisions. <a href="#contact">Get in touch</a> and we'll take it from there.
       </p>
     </div>
   </section>
